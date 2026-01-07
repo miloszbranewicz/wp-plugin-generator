@@ -1,9 +1,8 @@
-version: "3.9"
-
 services:
-  app:
+  php:
     build: .
-    container_name: wordpress-plugin-generator
-    restart: unless-stopped
-    tmpfs:
-      - /tmp
+    container_name: wp-generator-php
+    ports:
+      - "9000:9000"
+    volumes:
+      - .:/app
